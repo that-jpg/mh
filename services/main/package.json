@@ -4,7 +4,8 @@
   "description": "the main service",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --watch",
+    "ci:test": "jest"
   },
   "author": "",
   "license": "ISC",
@@ -12,5 +13,8 @@
     "i": "^0.3.7",
     "koa": "^2.14.2",
     "npm": "^9.6.5"
+  },
+  "devDependencies": {
+    "jest": "^29.5.0"
   }
 }
