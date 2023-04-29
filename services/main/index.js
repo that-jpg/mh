@@ -1,12 +1,17 @@
 const Koa = require('koa');
+const Router = require('@koa/router');
+
 const app = new Koa();
+const router = new Router();
 
-
-
-app.use(async ctx => {
-  ctx.body = 'Hello World';
+router.post('/login', (ctx, next) => {
+  // ctx.router available
+  ctx.body = { niceAuthBro: true, bigPasswordYouHaveHere: true };
 });
 
-app.listen(3000);
+app
+  .use(router.routes())
+  .use(router.allowedMethods());
 
+app.listen(3001);
 console.log("The humming of a good computer running a good server...")
